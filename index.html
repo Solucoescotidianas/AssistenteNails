@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assistente Nails | Sistema para Nail Designers</title>
+    <title>Assistente Nails | Sua Agenda Inteligente</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root { --primary: #ff4d8d; --dark: #333; --white: #fff; --bg: #fff0f5; }
+        :root { --primary: #ff4d8d; --dark: #333; --white: #fff; --bg: #fff0f5; --success: #25d366; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body { background-color: var(--white); color: var(--dark); line-height: 1.6; }
         
@@ -14,67 +14,75 @@
                  background-size: cover; padding: 80px 20px; text-align: center; color: white; }
         
         .cta-button { display: inline-block; background: var(--primary); color: white; padding: 18px 30px; 
-                      text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 20px; transition: 0.3s; border: none; cursor: pointer; }
+                      text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 20px; transition: 0.3s; border: none; cursor: pointer; text-transform: uppercase; }
+        .cta-button:hover { transform: scale(1.05); box-shadow: 0 10px 20px rgba(255, 77, 141, 0.3); }
         
         .benefits { padding: 50px 20px; text-align: center; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1000px; margin: 30px auto; }
-        .card { background: var(--bg); padding: 30px; border-radius: 15px; }
+        .card { background: var(--bg); padding: 30px; border-radius: 15px; border: 1px solid #f0cfe0; }
         .card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
 
         .price-section { padding: 60px 20px; text-align: center; background: #f9f9f9; }
-        .price-card { border: 3px solid var(--primary); padding: 40px; border-radius: 20px; display: inline-block; background: white; }
-        .old-price { text-decoration: line-through; color: #888; }
-        .new-price { font-size: 3.5rem; color: var(--primary); font-weight: bold; display: block; }
+        .price-card { border: 3px solid var(--primary); padding: 40px; border-radius: 20px; display: inline-block; background: white; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .old-price { text-decoration: line-through; color: #888; font-size: 1.2rem; }
+        .new-price { font-size: 4rem; color: var(--primary); font-weight: bold; display: block; margin: 10px 0; }
 
-        /* Estilo do Bot */
-        #chat-widget { position: fixed; bottom: 20px; right: 20px; z-index: 9999; font-family: sans-serif; }
-        #chat-bubble { background: var(--primary); width: 60px; height: 60px; border-radius: 50%; display: flex; 
-                       align-items: center; justify-content: center; color: white; font-size: 30px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-        #chat-window { position: absolute; bottom: 80px; right: 0; width: 300px; background: white; border-radius: 15px; 
-                       box-shadow: 0 5px 25px rgba(0,0,0,0.2); display: none; overflow: hidden; border: 1px solid #eee; }
-        .chat-header { background: var(--primary); color: white; padding: 15px; font-weight: bold; }
+        /* Bot Flutuante */
+        #chat-widget { position: fixed; bottom: 20px; right: 20px; z-index: 9999; }
+        #chat-bubble { background: var(--success); width: 60px; height: 60px; border-radius: 50%; display: flex; 
+                       align-items: center; justify-content: center; color: white; font-size: 30px; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        #chat-window { position: absolute; bottom: 85px; right: 0; width: 280px; background: white; border-radius: 15px; 
+                       box-shadow: 0 5px 25px rgba(0,0,0,0.2); display: none; overflow: hidden; border: 1px solid #eee; text-align: left; }
+        .chat-header { background: var(--success); color: white; padding: 15px; font-weight: bold; font-size: 14px; }
         .chat-body { padding: 15px; font-size: 14px; color: #444; }
+        .bot-btn { background: var(--success); color: white; padding: 10px; text-decoration: none; border-radius: 5px; display: block; text-align: center; margin-top: 10px; font-weight: bold; }
+
+        footer { background: var(--dark); color: white; padding: 20px; text-align: center; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Pare de perder tempo com agendamentos manuais!</h1>
-        <p>O Assistente Nails organiza sua agenda e suas finanças por um preço único.</p>
-        <a href="#comprar" class="cta-button">QUERO O ACESSO AGORA</a>
+        <h1>Sua Agenda Lotada e Organizada</h1>
+        <p>O Assistente Nails automatiza seus agendamentos para você focar no que importa: unhas impecáveis.</p>
+        <a href="https://pay.kiwify.com.br/bYMJn0x" class="cta-button">QUERO O ASSISTENTE AGORA</a>
     </header>
 
     <section class="benefits">
-        <h2>Por que você precisa do Assistente?</h2>
+        <h2>Feito para Profissionais de Sucesso</h2>
         <div class="grid">
-            <div class="card"><i class="fas fa-calendar-alt"></i><h3>Agenda 24h</h3><p>Sua cliente marca sozinha pelo link.</p></div>
-            <div class="card"><i class="fas fa-hand-holding-usd"></i><h3>Financeiro</h3><p>Controle seus lucros de forma simples.</p></div>
-            <div class="card"><i class="fas fa-mobile-alt"></i><h3>Fácil de usar</h3><p>Feito para usar no celular, sem complicação.</p></div>
+            <div class="card"><i class="fas fa-calendar-check"></i><h3>Agenda 24h</h3><p>Sua cliente marca horário sozinha, mesmo enquanto você dorme.</p></div>
+            <div class="card"><i class="fas fa-bell"></i><h3>Lembretes</h3><p>Reduza faltas com avisos automáticos via sistema.</p></div>
+            <div class="card"><i class="fas fa-chart-line"></i><h3>Gestão Financeira</h3><p>Controle seus lucros e gastos sem precisar de planilhas.</p></div>
         </div>
     </section>
 
     <section class="price-section" id="comprar">
         <div class="price-card">
-            <h3>PLANO PROFISSIONAL VITALÍCIO</h3>
+            <span style="background: #ffd700; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold;">OFERTA EXCLUSIVA</span>
+            <h3 style="margin-top:15px;">Acesso Vitalício</h3>
             <p class="old-price">De R$ 97,00</p>
             <span class="new-price">R$ 47,00</span>
             <p>Pagamento único, sem mensalidades!</p>
-            <a href="https://solucoescotidianas.github.io/AssistenteNails/" class="cta-button">COMPRAR COM DESCONTO</a>
+            <a href="https://pay.kiwify.com.br/bYMJn0x" class="cta-button">COMPRAR COM DESCONTO</a>
         </div>
     </section>
 
     <div id="chat-widget">
         <div id="chat-window">
-            <div class="chat-header">Assistente Nails</div>
+            <div class="chat-header">Suporte Assistente Nails</div>
             <div class="chat-body">
-                Olá! 👋 Sou o assistente virtual. <br><br>
-                Quer ver como o sistema funciona antes de pagar os <b>R$ 47,00</b>?
-                <br><br>
-                <button onclick="irParaWhats()" class="cta-button" style="font-size: 12px; padding: 10px; width: 100%;">SIM! QUERO VER</button>
+                Olá! 👋 Sou o assistente virtual.<br><br>
+                Gostaria de ver uma <b>demonstração rápida</b> do sistema ou tirar alguma dúvida antes de garantir sua oferta de R$ 47?
+                <a href="javascript:void(0)" onclick="irParaWhats()" class="bot-btn">CHAMAR NO WHATSAPP</a>
             </div>
         </div>
-        <div id="chat-bubble" onclick="toggleChat()"><i class="fas fa-comment"></i></div>
+        <div id="chat-bubble" onclick="toggleChat()"><i class="fab fa-whatsapp"></i></div>
     </div>
+
+    <footer>
+        <p>&copy; 2026 Assistente Nails - Eficiência para Nail Designers.</p>
+    </footer>
 
     <script>
         function toggleChat() {
@@ -82,11 +90,12 @@
             win.style.display = win.style.display === 'block' ? 'none' : 'block';
         }
         function irParaWhats() {
-            // SUBSTITUA O NÚMERO ABAIXO PELO SEU (DDD + Numero)
-            window.location.href = "https://wa.me/5511999999999?text=Quero+ver+a+demonstração+do+assistente+nails";
+            var fone = "34624347181"; 
+            var msg = "Olá! Vi o Assistente Nails no site e gostaria de tirar algumas dúvidas sobre a oferta de R$ 47,00.";
+            window.location.href = "https://wa.me/" + fone + "?text=" + encodeURIComponent(msg);
         }
-        // Abre o chat sozinho depois de 4 segundos
-        setTimeout(() => { document.getElementById('chat-window').style.display = 'block'; }, 4000);
+        // Abre o balão automaticamente após 6 segundos para captar atenção
+        setTimeout(() => { document.getElementById('chat-window').style.display = 'block'; }, 6000);
     </script>
 
 </body>
