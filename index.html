@@ -11,7 +11,7 @@
             --secondary: #fff0f5; /* Rosa Claro */
             --dark: #333;
             --white: #ffffff;
-            --success: #25d366; /* Verde WhatsApp */
+            --accent: #d4af37; /* Dourado para destaque */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
@@ -20,107 +20,30 @@
 
         /* Hero Section */
         header {
-            background: linear-gradient(rgba(255, 77, 141, 0.9), rgba(255, 77, 141, 0.9)), 
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
                         url('https://images.unsplash.com/photo-1604654894610-df63bc536371?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
             color: var(--white);
-            padding: 80px 20px;
+            padding: 100px 20px;
             text-align: center;
         }
 
-        h1 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 800; }
-        p.subtitle { font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9; }
+        h1 { font-size: 2.5rem; margin-bottom: 20px; font-weight: 800; text-transform: uppercase; }
+        p.subtitle { font-size: 1.2rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto; }
 
         /* Botão de Conversão */
         .cta-button {
             display: inline-block;
-            background-color: var(--success);
+            background-color: var(--primary);
             color: white;
-            padding: 18px 35px;
+            padding: 20px 40px;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius: 8px;
             font-weight: bold;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transition: transform 0.3s;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(255, 77, 141, 0.4);
+            transition: all 0.3s;
+            text-transform: uppercase;
         }
-        .cta-button:hover { transform: scale(1.05); }
-
-        /* Seção de Benefícios */
-        .benefits { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { text-align: center; padding: 20px; border-radius: 15px; background: var(--secondary); }
-        .card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; }
-
-        /* Prova Social */
-        .social-proof { background: #f9f9f9; padding: 60px 20px; text-align: center; }
-        .testimonial { font-style: italic; max-width: 600px; margin: 20px auto; border-left: 4px solid var(--primary); padding-left: 20px; }
-
-        /* Preço */
-        .pricing { padding: 60px 20px; text-align: center; }
-        .price-box { border: 2px solid var(--primary); display: inline-block; padding: 40px; border-radius: 20px; background: var(--white); }
-        .old-price { text-decoration: line-through; color: #888; }
-        .new-price { font-size: 3rem; color: var(--primary); font-weight: bold; display: block; }
-
-        footer { background: var(--dark); color: white; padding: 20px; text-align: center; font-size: 0.9rem; }
-
-        @media (max-width: 600px) { h1 { font-size: 1.8rem; } }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1>Transforme sua Agenda em uma Máquina de Lucros</h1>
-        <p class="subtitle">O Assistente Nails automatiza seus agendamentos para você focar no que importa: unhas impecáveis.</p>
-        <a href="https://wa.me/SEUNUMERO" class="cta-button">
-            <i class="fab fa-whatsapp"></i> QUERO TESTAR AGORA
-        </a>
-    </header>
-
-    <section class="benefits">
-        <h2 style="text-align:center;">Por que usar o Assistente Nails?</h2>
-        <div class="grid">
-            <div class="card">
-                <i class="fas fa-calendar-check"></i>
-                <h3>Agenda 24h</h3>
-                <p>Sua cliente marca horário mesmo enquanto você dorme ou está atendendo.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-bell"></i>
-                <h3>Lembretes Automáticos</h3>
-                <p>Reduza as faltas em até 80% com avisos automáticos via sistema.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-chart-line"></i>
-                <h3>Gestão Financeira</h3>
-                <p>Saiba quanto lucrou no mês com apenas um clique. Sem planilhas chatas.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="social-proof">
-        <h2>O que dizem as Nail Designers</h2>
-        <div class="testimonial">
-            <p>"Depois que comecei a usar o Assistente Nails, parei de perder tempo respondendo preço no WhatsApp toda hora. Minha agenda lotou!"</p>
-            <small>- Ana Silva, @ana.nails</small>
-        </div>
-    </section>
-
-    <section class="pricing">
-        <div class="price-box">
-            <h3>Plano Profissional</h3>
-            <p class="old-price">De R$ 47,90/mês</p>
-            <span class="new-price">R$ 19,90</span>
-            <p>por mês no plano anual</p>
-            <br>
-            <a href="https://wa.me/SEUNUMERO" class="cta-button" style="background-color: var(--primary);">ASSINAR AGORA</a>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Assistente Nails - Todos os direitos reservados.</p>
-    </footer>
-
-</body>
-</html>
+        .cta-button:hover { transform: scale(1.05); background-color: #e6397b; }
