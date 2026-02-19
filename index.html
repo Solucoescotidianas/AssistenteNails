@@ -27,16 +27,6 @@
         .old-price { text-decoration: line-through; color: #888; font-size: 1.2rem; }
         .new-price { font-size: 4rem; color: var(--primary); font-weight: bold; display: block; margin: 10px 0; }
 
-        /* Bot Flutuante */
-        #chat-widget { position: fixed; bottom: 20px; right: 20px; z-index: 9999; }
-        #chat-bubble { background: var(--success); width: 60px; height: 60px; border-radius: 50%; display: flex; 
-                       align-items: center; justify-content: center; color: white; font-size: 30px; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        #chat-window { position: absolute; bottom: 85px; right: 0; width: 280px; background: white; border-radius: 15px; 
-                       box-shadow: 0 5px 25px rgba(0,0,0,0.2); display: none; overflow: hidden; border: 1px solid #eee; text-align: left; }
-        .chat-header { background: var(--success); color: white; padding: 15px; font-weight: bold; font-size: 14px; }
-        .chat-body { padding: 15px; font-size: 14px; color: #444; }
-        .bot-btn { background: var(--success); color: white; padding: 10px; text-decoration: none; border-radius: 5px; display: block; text-align: center; margin-top: 10px; font-weight: bold; }
-
         footer { background: var(--dark); color: white; padding: 20px; text-align: center; font-size: 0.8rem; }
     </style>
 </head>
@@ -68,34 +58,24 @@
         </div>
     </section>
 
-    <div id="chat-widget">
-        <div id="chat-window">
-            <div class="chat-header">Suporte Assistente Nails</div>
-            <div class="chat-body">
-                Olá! 👋 Sou o assistente virtual.<br><br>
-                Gostaria de ver uma <b>demonstração rápida</b> do sistema ou tirar alguma dúvida antes de garantir sua oferta de R$ 47?
-                <a href="javascript:void(0)" onclick="irParaWhats()" class="bot-btn">CHAMAR NO WHATSAPP</a>
-            </div>
-        </div>
-        <div id="chat-bubble" onclick="toggleChat()"><i class="fab fa-whatsapp"></i></div>
-    </div>
-
     <footer>
         <p>&copy; 2026 Assistente Nails - Eficiência para Nail Designers.</p>
     </footer>
 
     <script>
-        function toggleChat() {
-            var win = document.getElementById('chat-window');
-            win.style.display = win.style.display === 'block' ? 'none' : 'block';
-        }
-        function irParaWhats() {
-            var fone = "34624347181"; 
-            var msg = "Olá! Vi o Assistente Nails no site e gostaria de tirar algumas dúvidas sobre a oferta de R$ 47,00.";
-            window.location.href = "https://wa.me/" + fone + "?text=" + encodeURIComponent(msg);
-        }
-        // Abre o balão automaticamente após 6 segundos para captar atenção
-        setTimeout(() => { document.getElementById('chat-window').style.display = 'block'; }, 6000);
+        const typebotInitScript = document.createElement("script");
+        typebotInitScript.type = "module";
+        typebotInitScript.innerHTML = `import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0/dist/web.js'
+
+        Typebot.initBubble({
+          typebot: "my-typebot-axv1vup",
+          theme: {
+            button: { backgroundColor: "#1D1D1D" },
+            chatWindow: { backgroundColor: "#F8F8F8" },
+          },
+        });
+        `;
+        document.body.append(typebotInitScript);
     </script>
 
 </body>
