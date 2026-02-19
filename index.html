@@ -85,21 +85,19 @@ h1 { font-size: 2.5rem; margin-bottom: 20px; color: var(--primary); }
         <p>Suporte via WhatsApp: +34 624 347 181</p>
     </footer>
 
-    <script>
-        const typebotInitScript = document.createElement("script");
-        typebotInitScript.type = "module";
-        typebotInitScript.innerHTML = `import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0/dist/web.js'
+    <!-- Typebot Script Corrigido -->
+    <script type="module">
+        import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js'
 
-Typebot.initBubble({
-  typebot: "my-typebot-axv1vup",
-  theme: {
-    button: { backgroundColor: "#1D1D1D" },
-    chatWindow: { backgroundColor: "#F8F8F8" },
-  },
-});
-`;
-        document.body.append(typebotInitScript);
-    <\/script>
+        Typebot.initBubble({
+          typebot: "my-typebot-axv1vup",
+          apiHost: "https://typebot.io",
+          theme: {
+            button: { backgroundColor: "#1D1D1D" },
+            chatWindow: { backgroundColor: "#F8F8F8" },
+          },
+        });
+    </script>
 
 </body>
 </html>
